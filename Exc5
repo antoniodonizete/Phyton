@@ -1,0 +1,34 @@
+secreto = 'elastico'
+digitadas = []
+
+while True:
+   letra = input('Digite uma letra: ')
+   if len(letra) > 1:
+      print('Digite apenas 1 letra!')
+      continue
+   digitadas.append(letra)
+
+
+
+   if letra in secreto:
+      print(f'Yes! Têm a letra {letra} na palavra secreta.')
+
+   else:
+       print(f'Não tem {letra} na palavra secreta!')
+       digitadas.pop()
+
+   secreto_temp = ''
+
+   for letra_secreta in secreto:
+       if letra_secreta in digitadas:
+           secreto_temp += letra_secreta
+       else:
+           secreto_temp += '*'
+   print(secreto_temp)
+   if secreto_temp == secreto:
+       print('You win!! Congratulatios!!')
+
+   else:
+       print(f'A palavra secreta está assim: {secreto_temp}')
+
+
